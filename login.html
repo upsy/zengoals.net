@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ZenGoals.net</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- STYLING -->
+        <link href="assets/css/bootstrap.css" rel="stylesheet">
+        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="assets/css/custom-theme/jquery-ui-1.9.0.custom.css" rel="stylesheet">
+        
+        <!-- for jplot -->
+        <link rel="stylesheet" type="text/css" href="assets/js/dist/jquery.jqplot.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/start.css" />
+<!--        <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />-->
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div id="main-wrapper">
+            <!-- HOME SCREEN -->
+            <div id="log-in-screen" class=" center">
+                    <div id="start-step5-user-creation" class="screen2   center">
+                    <h2>Log In to ZenGoals Academy:</h2>
+                    <br/>
+                    <form class="form-horizontal" id="form-user" style="text-align:left;" action="" method="post">
+                        <div class="central-form" style="margin-left:100px;">
+                            
+                            <div class="control-group">
+                                <label class="control-label" for="inputEmail">Your Email:</label>
+                                <div class="controls">
+                                    <input type="text" id="inputEmail" placeholder="Email" class="input-xlarge required email" name="user_email">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="inputPassword">Your Password:</label>
+                                <div class="controls">
+                                    <input type="password" id="inputPassword" placeholder="Password" name="user_password" class='required' minlength='6'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions center" style="padding-left:0px;">
+                            <button type="ajax-submit" class="btn btn-primary" id="submitLogIn">Log In</button>
+                            <button type="ajax-submit" class="btn" id="submitSignUp">Sign Up</button>
+                        </div>
+                        <small>(Forgot password stupid?)</small>
+                    </form>
+                </div>
+ 
+
+            </div>
+        </div>
+
+
+
+        <!-- BACKBONE.JS with its dependencies : JQuery $, Underscore _, json2 -->
+<!--    local: 
+        <script type="text/javascript" src="assets/js/libs/jquery-1.7.2.min.js"></script>-->
+        <script src="assets/js/libs/jquery-1.7.2.js"></script>
+        <script type="text/javascript" src="assets/js/libs/json2.js"></script>
+        <script type="text/javascript" src="assets/js/libs/underscore-min.js"></script>
+        <script type="text/javascript" src="assets/js/libs/backbone-min.js"></script>
+        
+<!--        <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>-->
+        <script type="text/javascript" src="assets/js/libs/jquery-ui-1.9.0.custom.min.js"></script>
+        <!-- BOOTSTRAP -->
+        <script src="assets/js/bootstrap/bootstrap-transition.js"></script>
+        <script src="assets/js/bootstrap/bootstrap-button.js"></script>
+        <script src="assets/js/bootstrap/bootstrap-carousel.js"></script>
+
+        <!-- JQUERY STUFF -->
+        <script type="text/javascript" src="assets/js/libs/jquery.validate.js"></script>
+        <script type="text/javascript" src="assets/js/libs/jquery.easing.1.3.js"></script>
+        
+        <!-- Custom made by us ;) -->
+        <script src="assets/js/shared.js"></script>
+        <script src="assets/js/login/sign-up.js"></script>
+
+    </body>
+</html>

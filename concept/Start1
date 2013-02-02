@@ -1,0 +1,140 @@
+Start
+-> create tasks
+-> create profile
+-> sent to app
+
+App
+-> check Login -> login
+-> send to home 
+	-> get goals? -> picked? -> pick goal screen
+	-> edit goal
+
+
+Pick screen
+Welcome screen
+	Goal edit
+	Goal overview
+All Overview screen ( Review Like )
+Todo screen
+Profile screen
+
+
+status == first -> pick
+			else 
+		-> home
+
+#############################################################################################
+
+Settings ->currentAction = Plan / Review / Do ?
+		 => max milestones..
+
+User 	-> actionStatus = 
+		-> status  = first? / active
+		-> email/sha1(pass)
+		-> available goal slots = 1
+		-> scores
+
+History -> progress.. x / day.. and so on?
+
+Goals 	-> title
+		-> duration
+		-> Current ... Month / Monthly ?!
+		-> Weekly Milestone
+			-> Tasks for this week
+				-> Resources / Notes
+		-> start date
+		-> scores
+		-> finalScore
+		-> status: active / freezed / finished / canceled?
+
+Milestone 	-> name
+			-> startDate / endDate ?
+			-> week nr?!
+			-> pos (id)
+			-> status - open / done / active  / deleted ?!
+
+
+Tasks 		-> startDate / endDate
+			-> name
+			-> duration?! 
+			-> Resources / Notes
+			-> status - open / done / active / deleted
+
+Resources 	-> link / attachment ?! / html description
+			-> sticky? position?
+
+
+Notes 		-> note title
+			-> sticky?
+			-> position?
+			-> html description
+			-> status => favorited ?! / Task ?!
+
+########################################################################
+
+
+
+RoadMap ... 
+
+Calendar ... 
+
+Goal Edit Screen
+-> Title / Duration / startDate
+-> Current Month / Monthly Goal
+	-> 4 Weeks Milestone
+		-> 1st Week Tasks 
+-> Available Task Points ( 1Task/day -> 3Task/day )
+
+#######################################################################
+
+
+App -> 1.check login
+	-> 2.check user status -> if status = first -> go to pick screen -> goals, order by scores ?! -> pick active!
+			else -> go to welcome screen
+	
+	welcome screen -> user name 
+					-> active goals , available goal slots, action buttons ( if today has tasks ?! - plan today)
+					-> 
+
+
+
+
+
+
+
+PICK SCREEN
+
+-> aduc scor user din db
+-> aduc goals din db
+-> calculez scor in functie de scor goal + scor user 
+			scor total = fractieUser(categor) * scorGoal(categorie) + ... + 
+-> ordonez dupa scor si pop up sa sugerez selectie
+-> accept selectie -> inapoi la db goal cu scor final si goal activ
+-> go to welcome screen ?!
+
+Modele: User, Goals
+Colection: Goals
+
+Views: GoalView, GoalCollection, PopUp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

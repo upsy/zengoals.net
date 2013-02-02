@@ -1,0 +1,14 @@
+<?php session_start();
+
+
+if (isset($_SESSION['USER_LOGGED_IN']) && $_SESSION['USER_LOGGED_IN'] == 13){
+	$logedIn = true;	
+}
+
+if (isset($logedIn) && $logedIn){
+	echo '{ "logged_str": "true" }';
+} else {
+	echo '{ "logged_str": "false"}';
+}
+
+?>

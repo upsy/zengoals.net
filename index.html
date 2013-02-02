@@ -1,0 +1,353 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ZenGoals.net</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- STYLING -->
+        <link href="assets/css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+        body {
+            margin: 0;
+            padding: 10px;
+        }
+
+        /* Custom container */
+        #main-wrapper {
+            margin: 0 auto;
+            max-width: 700px;
+        }
+        #main-wrapper > hr {
+            margin: 30px 0;
+        }
+
+        /* Main marketing message and sign up button */
+        #home-intro {
+            text-align: center;
+        }
+        #home-intro h1 {
+            font-size: 72px;
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+        #home-intro .btn {
+            font-size: 21px;
+            padding: 14px 24px;
+        }
+        
+        #home-actions {
+            margin-top:30px;
+            margin-bottom:30px;
+            text-align: center;
+           1blahl;
+        }
+        
+        .header-log-in {
+            margin-top: 20px;
+            right:20px;
+            position:fixed !important;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .screen {
+            position: absolute;
+            width: 700px;
+            display:none;
+            opacity: 0;
+        }
+       .active {
+           opacity:1;
+/*         display:block;*/
+        }
+        li p {
+            margin-top:10px;
+        }
+        .goal_view{
+            display :none;
+        }
+        
+        .active_goal{
+            display: block;
+        }
+        
+        .slider{
+            width: 300px;
+            margin: auto;
+            margin-bottom:5px;
+        }
+        
+        .hidden2{
+            display: none !important;
+        }
+        
+        #next-screen-step3{
+            display: block;
+            margin-top: 20px;
+        }
+        
+        .focus-box{
+            display:block;
+            float:left;
+            width:0px;
+            height:20px;
+            background-color: red;
+            margin:0;
+            background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.2))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#33000000',GradientType=0 ); /* IE6-9 */
+
+        }
+        
+        #focus-bar-holder{
+            text-align: center;
+            display:block;
+            max-width:400px;
+            height: 20px;
+            padding:0;
+            background-color: #e3e3e3;
+            margin:auto;
+            margin-top:30px;
+            margin-bottom: 5px;
+        }
+        #chartdiv{
+            height:300px;
+            width:420px;
+            margin: auto;
+        }
+        .error{
+            color: #f66;
+        }
+    </style>
+        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="assets/css/custom-theme/jquery-ui-1.9.0.custom.css" rel="stylesheet">
+        
+        <!-- for jplot -->
+        <link rel="stylesheet" type="text/css" href="assets/js/dist/jquery.jqplot.min.css" />
+<!--        <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />-->
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="header-log-in">
+            <a href="#">MEMBER LOGIN</a>
+        </div>
+        <div id="main-wrapper">
+            <!-- HOME SCREEN -->
+            <div id="home-screen" class="screen center">
+                <div id="home-intro">
+                    <h1>Welcome to the Zen Academy of Goals!</h1>
+                    <p class="lead">Cras justo odio, dapibus ac facilisis in, gestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                        
+                        
+                </div>
+                <div id="home-actions">
+                    <a class="btn btn-large btn-success next-screen" href="#">Start Your Journey</a>
+                </div>
+                <div id="home-quotes">
+                    <blockquote><p>“You got to be careful if you don’t know where you’re going, because you might not get there.”<br/><strong> – Yogi Berra</strong></p></blockquote>
+                </div>
+            </div>
+            
+            <!-- START SCREENS -->
+            <div id="start-screens" class="">
+                <div id="start-step1-theory" class="screen">
+                    <h2 class="center">A Little Theory Behind ZenGoals:</h2>
+                    <div class="post">
+                        <small><em>(ZenGoals philosophy is based on two <a href="http://zenhabits.net" target="_blank">:zenhabits</a> articles: <a href="http://zenhabits.net/really-simple-goal-setting/" target="_blank">Really Simple Goal Setting</a> and <a href="http://zenhabits.net/the-ultimate-guide-to-motivation-how-to-achieve-any-goal/" target="_blank">The Ultimate Guide to Motivation – How to Achieve Any Goal</a>, which we found really enlightening and in deep agreement with our own direction of goal setting. Bellow is a summary of guidelines...)</em></small><br/><br/>
+                        <p><span id="more-1343"></span>Keep things as simple as possible if you can. FOCUS your energies on a small number of goals, and take ONE step each day!</p></br/>
+                        <ol>
+                            <li><strong>Brainstorm</strong>. <em>“Sometimes I’ve believed as many as six impossible things before breakfast.” (Lewis Carroll)</em><br/><p>If you don’t already have a list of things you’d like to accomplish, start out by making such a list. Throw anything on the list — you don’t actually have to do them. This is just to make sure you don’t miss anything.</p></li>
+                            <br/>
+                            <li><strong>Analyze</strong>. <em>“Most of what we say and do is not essential. If you can eliminate it, you’ll have more time, and more tranquillity. Ask yourself at every moment, ‘Is this necessary?” (Marcus Aurelius)</em><br/> <p>Now take a look at the list and figure out which goal will change your life the most — within the next year or so. Is it something that can be accomplished in a year? It can take less than a year — one month or three or six if you like. If it will take several years, you might want to create a sub-goal that will take a year or less — any longer and it’s hard to stay motivated. Is it a goal that will really make a big difference in your life? Is it something you REALLY want to achieve? Be sure it’s something you’ll be passionate about, or you’ll lose motivation.</p></li>
+                            <br/>
+                            <li><strong>Beak it down</strong>. <em>“Smile, breathe and go slowly.” (Thich Nhat Hanh)</em><br/> <p>If your goal will take a year or so to accomplish, you’ll want to create a smaller sub-goal. Figure out a project you can do this month to get yourself a few steps closer to that goal, and focus on this project for the next month. Create Milestones for each week, and each day do ONE Task towards the upcoming Milestone.</p></li>
+                            <br/>
+                            <li><strong>Baby steps</strong>. <em>“Nature does not hurry, yet everything is accomplished.” (Lao Tzu)</em><br/> <p>Don't start with 2 Goals and 3 Tasks a day! You have to start ONE Goal, ONE Task! If you can do ONE Task each day for 3-4 days in row.. add another ONE, and so on until you gradually reach your peak. Each Task should not take more than 30 minutes! Breathe. There is no hurry, if you consistently put one step ahead of the other you WILL REACH your Goal! ONE step each day is success no matter how small!</p></li>
+                            <br/>
+                            <li><strong>Separate activities</strong>. <em>“When walking, walk. When eating, eat.” (Zen Proverb) </em><br/> <p>Keep your PLAN time, DO time and REVIEW time separated. When you PLAN you plan, when you DO you do, when you REVIEW you review. Don't worry about one another. Plan it in the morning, set your Task for the day carefully! But once planning is done... DO time begins, there are no more goals, planning, overview or anything else, just the TASK! Trust yourself you've planned it right and just DO IT!</p></li>
+                            <br/>
+                            <li><strong>FOCUS</strong>. <em>“Concentrate all your thoughts upon the work at hand. The sun’s rays do not burn until brought to a focus.” (Alexander Graham Bell)</em> <p>Imagine waking and going for a run, as if running were all you do. Nothing else is on your mind but the run, and you do it to the very best of your abilities. Then you eat, enjoying every flavorful bite of your fresh breakfast of whole, unprocessed foods. You read a novel, as if nothing else in the world existed. You follow your goals ONE Task at a time, each Task done with full focus and dedication. This is a life lived fully in the moment, with a dedication to doing the best you can in anything you do — whether that’s a work project or making green tea.</p></li>
+                            <br/>
+                            <li><strong>Keep motivated</strong>. <em>“There is more to life than increasing its speed.” (Gandhi)</em><br/> <p>Know your reasons. Give them some thought … and write them down. Also take 5 min each day to visualize your results! Visualization can be very powerful! Imagine how much better your life will be once you reach your GOAL! Build a board of images that motivate you towards your Goal, be creative! You can also read about it, find a book or a blog about your goal. For some reason, reading helps motivate and focus you on whatever you’re reading about. So read about your goal every day, if you can, especially when you’re not feeling motivated.</p></li>
+                            <br/>
+                            <li><strong>Chart your progress</strong>. <em>“Life is a series of natural and spontaneous changes. Don’t resist them – that only creates sorrow. Let reality be reality. Let things flow naturally forward in whatever way they like.” (Lao-Tzu)</em><br/> <p>This can be as simple as marking an X on your calendar, or creating a simple spreadsheet, or logging your goal using online software (like this one ;). But it can be vastly rewarding to look back on your progress and to see how far you’ve come, and it can help you to keep going — you don’t want to have too many days without an X! Now, you will have some bad marks on your chart. That’s OK. Don’t let a few bad marks stop you from continuing. Strive instead to get the good marks next time.</p></li>
+                            <br/>
+                            <li><strong>Daily improvement</strong>.<em>“It’s not enough to be busy, so are the ants. The question is, what are we busy about?” (Henry David Thoreau)</em><br/> <p>Every evening ask yourself what could you have done better? How will you improve your task for tomorrow. Keep notes on each day's progress!</p></li>
+                            <br/>
+                            <li><strong>Keep at it</strong>.<em>: “Never, never, never, never give up.” (Winston Churchill)</em><br/> <p>As long as you move in the right direction it's just a matter of time! Ten years from now, this half an hour a day will seem like your best investment ever!</p></li>
+                            <br/>
+                        </ol>
+                        
+                        <div id="clear"></div>
+                        
+                        <br/>
+                        <div class="center">
+                            <a href="#" class="next-screen btn btn-large btn-primary">Let's Begin</a>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+
+                    </div>
+                </div>
+                
+                <div id="start-step2-goals" class="screen center">
+                    <h2>1. Brainstorm your goals:</h2>
+                    <br/>
+                    <form id="form-goals">
+                        <textarea id ="form-goals-textarea" rows="12" class="input-xxlarge" placeholder="Write a goal on each line..  "></textarea>
+                    </form>
+                    <div class="warning"></div>
+                    <ul class="pager">
+                        <li><a href="#" class="next-screen" data-slide="next">Next Step</a></li>
+                    </ul>
+                </div>
+                
+                <div id="start-step3-analyze" class="screen center">
+                    <h2>2. Analyze the Impact of Each Goal:</h2>
+                    <br/>
+                    <div id="analyzer-goals-holder">
+                        
+                    </div>
+                    <div class="warning"></div>
+                    <ul class="pager">
+                        <li class="disabled" id ="prev-goal"><a href="#" class="" >Previous Goal</a></li>
+                        <li id ="next-goal"><a href="#" class="" >Next Goal</a></li>
+                        <li id ="next-screen-step3" class="hidden2"><a href="#" class="next-screen" data-slide="next">Next Step</a></li>
+                    </ul>
+                </div>
+               
+                <div id="start-step4-user-scores" class="screen center">
+                    <h2>Please define your scores</h2>
+                    <p>some description stuff</p>
+                     <div>
+                         <p><strong>Available Points:</strong> <span id="available-points">100</span></p>
+                     </div>    
+                    
+                     <label for="spinner">Professional</label>
+                     <input class="spinner" name="value" />
+                     
+                     <label for="spinner">Personal</label>
+                     <input class="spinner" name="value" />
+                     
+                     <label for="spinner">Social</label>
+                     <input class="spinner" name="value" />
+                     
+                     <div id="focus-bar-holder"></div>
+                       
+                     <div id="chartdiv"></div>
+                     <ul class="pager">
+                        <li id ="next-screen-step4" class="hidden2">
+                            <a href="#" class="next-screen" data-slide="next">Next Step</a>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </li>
+                     </ul>
+                        
+
+                </div>
+                
+                <div id="start-step5-user-creation" class="screen center">
+                    <h2>3. Save info to Your Account and start managing:</h2>
+                    <br/>
+                    <form class="form-horizontal" id="form-user" style="text-align:left;" action="" method="post">
+                        <div class="central-form" style="margin-left:100px;">
+                            <div class="control-group">
+                                <label class="control-label" for="inputName">Your Name:</label>
+                                <div class="controls">
+                                    <input type="text" id="inputName" placeholder="Name" class="input-xlarge required" name="user_name" minlength="2">
+                                </div>
+                            </div>
+                            
+                            <div class="control-group">
+                                <label class="control-label" for="inputEmail">Your Email:</label>
+                                <div class="controls">
+                                    <input type="text" id="inputEmail" placeholder="Email" class="input-xlarge required email" name="user_email">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="inputPassword">Your Password:</label>
+                                <div class="controls">
+                                    <input type="password" id="inputPassword" placeholder="Password" name="user_password" class='required' minlength='6'>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="repeatPassword">Repeat Password:</label>
+                                <div class="controls">
+                                    <input type="password" id="repeatPassword" placeholder="Repeat Password" equalTo="#inputPassword" class='required' minlength='6'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions center" style="padding-left:0px;">
+                            <button type="ajax-submit" class="btn btn-primary" id="submitAccount">Create Account...</button>
+                        </div>
+                        <div class="warning"></div>
+                    </form>
+                </div>
+               
+            </div>
+        </div>
+        
+        <!-- BACKBONE.JS with its dependencies : JQuery $, Underscore _, json2 -->
+<!--    local: 
+        <script type="text/javascript" src="assets/js/libs/jquery-1.7.2.min.js"></script>-->
+        <script src="assets/js/libs/jquery-1.7.2.js"></script>
+        <script type="text/javascript" src="assets/js/libs/json2.js"></script>
+        <script type="text/javascript" src="assets/js/libs/underscore-min.js"></script>
+        <script type="text/javascript" src="assets/js/libs/backbone-min.js"></script>
+        
+<!--        <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>-->
+        <script type="text/javascript" src="assets/js/libs/jquery-ui-1.9.0.custom.min.js"></script>
+        <!-- BOOTSTRAP -->
+        <script src="assets/js/bootstrap/bootstrap-transition.js"></script>
+        <script src="assets/js/bootstrap/bootstrap-button.js"></script>
+        <script src="assets/js/bootstrap/bootstrap-carousel.js"></script>
+
+        <!-- JQUERY STUFF -->
+        <script type="text/javascript" src="assets/js/libs/jquery.validate.js"></script>
+        <script type="text/javascript" src="assets/js/libs/jquery.easing.1.3.js"></script>
+
+        
+        <!-- For jplot -->
+        <!--<script src="assets/js/dist/jquery.min.js"></script>-->
+        <script src="assets/js/dist/jquery.jqplot.js"></script>
+        <script src="assets/js/dist/plugins/jqplot.donutRenderer.min.js"></script>
+        <!-- Custom made by us ;) -->
+        <script src="assets/js/shared.js"></script>
+        <script src="assets/js/models/model-goals.js"></script>
+        <script src="assets/js/main-index.js"></script>
+        
+        
+        <!-- LE BEAUTIFULL TEMPLATES COMPS -->
+        <script id="goal_view-template" type="text/template">
+            <h3 style="margin-top:40px;"><em><%= data.goal_number %>) <%= data.goal_title %></em></h3>
+            <div class="goal_sliders center">
+                <h5>How much will the results of this goal improve Your:</h5><br/>
+                <h5>- Professional Role (career)</h5>
+                <div class="slider" data-score_name="professional"></div><span class="amount">1</span><br/>
+                <h5>- Personal Role (self development)</h5>
+                <div class="slider" data-score_name="personal"></div><span class="amount">1</span><br/>
+                <h5>- Social Role (family & friends)</h5>
+                <div class="slider" data-score_name="social"></div><span class="amount">1</span><br/>
+            </div>
+        </script>
+    </body>
+</html>

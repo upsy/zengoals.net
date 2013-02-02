@@ -1,0 +1,20 @@
+
+
+
+############
+## Windows
+############
+
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+
+*.png
+*.jpg
+*.zip
+
+# Mac crap
+.DS_Store
