@@ -1,0 +1,68 @@
+Start
+-> create tasks
+-> create profile
+-> sent to app
+
+App
+-> check Login -> login
+-> send to home 
+	-> get goals? -> picked? -> pick goal screen
+	-> edit goal
+
+	pick screen
+	welcome screen
+		goal edit
+		goal overview
+	overview screen
+	todo screen
+	profile screen
+
+
+status == first -> pick
+			else 
+		-> home
+
+
+
+User 	-> status 
+		-> email/sha1(pass)
+		-> available goal slots = 1
+		-> scores
+
+Goals 	-> title
+		-> deadline estimated
+		-> Month 
+		-> Weekly Milestone
+			-> Tasks for this week
+				-> Resources / Notes
+		-> start date
+		-> scores
+		-> finalScore
+
+Milestone 	-> name
+			-> startDate / endDate
+			-> week nr?!
+
+Tasks 		-> startDate / endDate
+			-> name
+			-> duration?! 
+			-> Resources / Notes		
+
+Resources 	-> link / attachment ?! / html description
+
+Notes 		-> html description
+
+
+
+RoadMap ... 
+
+
+Calendar ... 
+
+Goal Edit Screen
+-> Title / Duration / startDate
+-> Current Month / Monthly Goal
+	-> 4 Weeks Milestone
+		-> 1st Week Tasks 
+-> Available Task Points ( 1Task/day -> 3Task/day )
+

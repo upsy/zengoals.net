@@ -30,6 +30,26 @@
 
 		doLogIn: function(ev){
 			ev.preventDefault();
+
+			var loginUrl = serverPath + "/user_login";
+
+			$.getJSON(loginUrl,
+					  {
+					    userEmail: $('#inputEmail').val() ,
+					    userPass: $('#inputPassword').val(),
+					  },
+
+					  function(data) {
+					  		console.log(data);
+
+					  		if (data.success == 'true'){
+					  			window.location = 'app.html';
+					  		}
+					  		else {
+					  			// ii dam o notificare ca e fraier si nu stie a se loga ;D
+					  		}
+					  });
+
 		}
 	});
 

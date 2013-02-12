@@ -2,8 +2,118 @@
         <html>
         <head>
                 <title>Test</title>
+                <link href="assets/css/bootstrap.css" rel="stylesheet">
+                <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+                <link href="assets/css/app.css" rel="stylesheet">
+                <style>
+
+                        #pick_screen_goals_module{
+                                width: 470px;
+                                /*background-color: #bbbbff;*/
+                                margin: auto;
+                                margin-top: 30px;
+                        }
+
+                        #picked_goals{
+                                margin-top: 30px;
+                                width: 470px;
+
+                        }
+
+                        #pick_screen_goals_holder{
+                                padding: 10px;
+                                /*margin-bottom: 10px;*/
+                                font-size: 14pt;
+                                color: #666;
+                                list-style-type: none;
+                                text-align: left;
+                                /*background-color: #ccccff;*/
+                                margin-left: 5px;
+                                margin-right: 5px;
+
+                        }
+
+                        #pick_screen_goals_picked_holder{
+                                padding: 10px;
+                                margin-bottom: 10px;
+                                font-size: 14pt;
+                                color: #666;
+                                list-style-type: none;
+                                text-align: left;
+                                background-color: #ccffcc;
+                                min-height: 20px;
+
+                        }
+
+                        .goal_pickScreen{
+                                margin-bottom: 10px;    
+                        }
+
+                        .goal_pickScreen:last-child{
+                                margin-bottom: 0px;
+                        }
+
+                        .pick_screen.goal input{
+                                float: left;
+                                margin-right: 5px;
+                                display: inline-block;
+                        }
+
+                        #pick_screen_goals_module .title{
+                                1float:left;
+                        }
+
+                        #pick_screen_goals_module .content{
+                                clear: both;
+                        }
+
+                </style>
         </head>
         <body>
+
+                <div id="main_wrapper">
+                    <!-- HOME SCREEN -->
+                    <div id="home_screen" class="screen center" style="margin-top: 83.5px;">
+                        Wild App!
+                </div>
+
+                <div id="pick_screen" class="screen center" style="margin-top: 48.5px; display: block;">
+                        <h1>PICK YOUR GOALS<br/><small>Available slots: <a href="#" data-toggle="tooltip" title="" data-original-title="A much longer tooltip belongs right here to demonstrate the max-width we apply." data-placement="right"><strong>1</strong></a></small></h1>
+                        <p>(From all your declared goals please pick <strong>x</strong> to start working on. You will be able to increase .. bla bla)</p>
+
+                        <div id="pick_screen_goals_module">
+                                <div class="header">
+                                        <!-- <div class="title"><h4>Goals List</h4></div> -->
+                                        <!-- <div class="btn btn-primary">Add New + </div> -->
+                                </div>
+                                <div class="content">
+                                        <ul id="pick_screen_goals_holder">
+                                                <li class="goal_pickScreen">
+
+                                                        <div class="pick_screen goal" data-totalscore="69">
+                                                                <input type="checkbox" class="check" data-bind="checked: isDone" style="opacity: 1;">
+                                                                <div class="title" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Build ZenGoals.net <small><strong>( score: 69 )</strong></small> </div>
+                                                        </div>
+                                                        
+                                                </li>
+
+                                                <li class="goal_pickScreen">
+                                                    <div class="pick_screen goal" data-totalscore="60">
+                                                        <input type="checkbox" class="check" data-bind="checked: isDone" style="opacity: 1;">
+                                                        <div class="title">Learn JavaScript App Development <small><strong>( score: 60 )</strong></small></div>
+                                                </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="footer btn-group">
+                                        <div class="btn btn-primary">Add New + </div>
+                                        <div class="btn btn-success">Continue</div>
+                                        <!-- <p>You have <strong>x</strong> available slots</p> -->
+                                </div>                                        
+                        </div>
+
+                </div>
+        </div>
         
         <!-- BACKBONE.JS wit h its dependencies : JQuery $, Underscore _, json2 -->
 <!--    local: 
@@ -13,11 +123,10 @@
         <script type="text/javascript" src="assets/js/libs/underscore-min.js"></script>
         <script type="text/javascript" src="assets/js/libs/backbone-min.js"></script>
         
-<!--        <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>-->
-        <script type="text/javascript" src="assets/js/libs/jquery-ui-1.9.0.custom.min.js"></script>
         <!-- BOOTSTRAP -->
         <script src="assets/js/bootstrap/bootstrap-transition.js"></script>
         <script src="assets/js/bootstrap/bootstrap-button.js"></script>
+        <script src="assets/js/bootstrap/bootstrap-tooltip.js"></script>
         <script src="assets/js/bootstrap/bootstrap-carousel.js"></script>
 
         <!-- JQUERY STUFF -->

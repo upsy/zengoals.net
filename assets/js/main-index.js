@@ -22,7 +22,7 @@ $(document).ready(function(){
    
     
     var $screens_arr = $(".screen");
-    var currentStep = 1;
+    var currentStep = 0;
     
     centerScreens(); // on init center screens;
         
@@ -234,6 +234,7 @@ $(document).ready(function(){
         },
 
         saveGoalsForUser: function(received_user_id){
+            var successfull_nr = 0;
             console.log(">> save goals for the user_id:"+ received_user_id);
             App.userGoals.each(function(goalModel,index){
                 // scores = {};
@@ -243,14 +244,22 @@ $(document).ready(function(){
 
                 // goalModel.set({goal_score: scores});
                 goalModel.url = serverPath + "/goals"+ "/"+received_user_id;
+                
                 console.log(">> SAVE NEW GOAL TO SERVER: ");
                 console.log(goalModel);
+
                 goalModel.save({},{
                   wait:true,
                   success: function(model,response){
                       console.log(">> Success, saved new goal for user_id:"+received_user_id);
                       console.log(response);
-                      //window.location = "app.html";
+                      
+                      successfull_nr ++;
+                      
+                      /* Check if this is the last goal succesfully saved! If it is go to app.html */ 
+                      if (successfull_nr ==  App.userGoals.length){
+                        window.location = "app.html";
+                      }
                   },
                   error: function(model,response){
                       console.log(">> ERROR at save goal for user_id:"+ received_user_id);

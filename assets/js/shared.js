@@ -1,4 +1,4 @@
-serverPath = "http://127.0.0.1/zengoals.net/inc/api";
+serverPath = "http://localhost/zengoals.net/inc/api";
 
 $.fn.serializeObject = function()
 {

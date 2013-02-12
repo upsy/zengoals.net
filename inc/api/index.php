@@ -22,6 +22,10 @@ $app->get("/user_test_logged_in",'testLogin');
 $app->get('/user_login','doLogin');
 $app->get("/user/:id", 'getUser');
 
+/** Goals stuff */
+$app->get("/user/:id/goals", 'getUserGoals');
+$app->put("/user/:id/goals/:goalID", 'saveUserGoal');
+
 $app->run();
 
 
@@ -107,11 +111,15 @@ function createUser(){
         $user->scoreprofessional = $userData_obj->user_score->professional;
         $user->scorepersonal = $userData_obj->user_score->personal;
         $user->scoresocial = $userData_obj->user_score->social;
-
-
+        $user->status = 'newly_created';
+        $user->availableslotsgoals = 1;
 
         $id = R::store($user);
         
+
+        $_SESSION['USER_LOGGED_IN'] = 13;
+        $_SESSION['USER_ID'] = $id;
+
         echo '{"user_id": "'.$id.'"}';
     }
     else {
@@ -146,12 +154,44 @@ function createGoal($userID){
 
 }
 
-function getUser($id){
+function getUser( $id ){
     $user = R::load('user',$id);
     // echo 'haha';
     // var_dump($user);
     echo json_encode($user->export());
 }
+
+
+function getUserGoals( $id ){
+    //echo ">get goals $id";
+    $user = R::load('user',$id);
+    if ($user->id){
+        $goals = $user->ownGoal;
+        //var_dump($goals);
+        echo json_encode( R::exportAll( $goals ) );
+    }
+}
+
+function saveUserGoal( $id, $goalID ){
+    $goal = R::load('goal',$goalID);
+    
+    $request = Slim::getInstance()->request();
+    $goalData_obj = json_decode($request->getBody(),false);
+    
+    if (isset($goalData_obj)){
+        $goal->name = $goalData_obj->name;
+        $goal->scoreprofessional = $goalData_obj->scoreprofessional;
+        $goal->scorepersonal = $goalData_obj->scorepersonal;
+        $goal->scoresocial = $goalData_obj->scoresocial;
+        $goal->userid = $id;
+        $goal->status = $goalData_obj->status;
+        R::store($goal);
+        echo json_encode(R::export());
+    }
+
+
+}
+
 
 // function getPages(){
 //     $controller_pages = new Controller_Pages();
